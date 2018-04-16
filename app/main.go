@@ -2,16 +2,18 @@ package main
 
 import (
 	"os"
-	"log"
 	"net/http"
 	"fmt"
+	"github.com/siquare/attengo/app/config"
+	"log"
 )
 
 func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = config.GetConfiguration().DefaultPort
+		log.Println("$PORT is not specified, use default port: ", port)
 	}
 
 	http.HandleFunc("/", handler)
