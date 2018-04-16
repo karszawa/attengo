@@ -1,4 +1,4 @@
-package attengo
+package app
 
 import (
 	"os"

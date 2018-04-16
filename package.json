@@ -1,0 +1,28 @@
+{
+  "name": "attengo",
+  "version": "1.0.0",
+  "description": "Yo",
+  "main": "scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel scripts/main.jsx",
+    "build": "parcel build scripts/main.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siquare/attengo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siquare/attengo/issues"
+  },
+  "homepage": "https://github.com/siquare/attengo#readme",
+  "dependencies": {
+    "hyperapp": "^1.2.5"
+  },
+  "devDependencies": {
+    "babel-preset-hyperapp": "^2.3.0",
+    "parcel-bundler": "^1.7.1"
+  }
+}
