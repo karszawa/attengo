@@ -13,7 +13,7 @@ func main() {
 
 	if port == "" {
 		port = config.GetConfiguration().DefaultPort
-		log.Println("$PORT is not specified, use default port: ", port)
+		log.Println("$PORT is not set, use ", port)
 	}
 
 	http.HandleFunc("/", handler)
