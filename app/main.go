@@ -3,12 +3,12 @@ package main
 import (
 	"os"
 	"net/http"
-	"fmt"
 	"github.com/siquare/attengo/app/config"
 	"log"
+	"github.com/siquare/attengo/app/handlers"
 )
 
-func main() {
+func getPort() string {
 	port := os.Getenv("PORT")
 
 	if port == "" {
@@ -16,10 +16,13 @@ func main() {
 		log.Println("$PORT is not set, use ", port)
 	}
 
-	http.HandleFunc("/", handler)
-	http.ListenAndServe(":" + port, nil)
+	return port
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %q", r.URL.Path[1:])
+func main() {
+	http.HandleFunc("/", handlers.RootHandler)
+
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./dist"))))
+
+	http.ListenAndServe(":" + getPort(), nil)
 }
