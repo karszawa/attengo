@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/siquare/attengo#readme",
   "dependencies": {
+    "@hyperapp/router": "^0.7.0",
+    "actions": "^1.3.0",
+    "containers": "^0.0.1",
     "hyperapp": "^1.2.5"
   },
   "devDependencies": {
