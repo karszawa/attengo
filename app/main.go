@@ -10,10 +10,10 @@ import (
 )
 
 func main() {
-	if os.Getenv("ATTENGO_ENV_ENV") != "production" {
+	if os.Getenv("ENV_ENV") != "production" {
 		env.Load()
 	}
-	
+
 	config := env.GetSpecification()
 
 	http.HandleFunc("/", handlers.RootHandler)
