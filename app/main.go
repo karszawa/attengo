@@ -6,14 +6,10 @@ import (
 	"github.com/siquare/attengo/env"
 	"fmt"
 	"log"
-	"os"
 )
 
 func main() {
-	if os.Getenv("ENV_ENV") != "production" {
-		env.Load()
-	}
-
+	env.Load()
 	config := env.GetSpecification()
 
 	http.HandleFunc("/", handlers.RootHandler)
