@@ -10,6 +10,7 @@ type Specification struct {
 	Env Env
 	DB DB
 	Assets Assets
+	Firebase Firebase
 }
 
 type Env struct {
@@ -38,6 +39,15 @@ type DB struct {
 
 type Assets struct {
 	RootPath string `envconfig:"ROOT_PATH"`
+}
+
+type Firebase struct {
+	ApiKey				string `envconfig:"API_KEY" json:"apiKey"`
+	AuthDomain			string `envconfig:"AUTH_DOMAIN" json:"authDomain"`
+	DatabaseURL 		string `envconfig:"DATABASE_URL" json:"databaseURL"`
+	ProjectId			string `envconfig:"PROJECT_ID" json:"projectId"`
+	StorageBucket		string `envconfig:"STORAGE_BUCKET" json:"storageBucket"`
+	MessagingSenderId	string `envconfig:"MESSAGING_SENDER_ID" json:"messagingSenderId"`
 }
 
 var config Specification
