@@ -36,3 +36,8 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[metadata.heroku]
+  root-package = "github.com/siquare/attengo"
+  go-version = "1.10.2"
+  install = [ "./..." ]
