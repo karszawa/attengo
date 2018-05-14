@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel app/scripts/main.jsx",
-    "build": "parcel build app/scripts/main.jsx"
+    "build": "parcel build app/scripts/main.jsx",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "hyperapp": "^1.2.5"
   },
   "devDependencies": {
+    "yarn": "^1.6.0",
     "babel-preset-hyperapp": "^2.3.0",
     "parcel-bundler": "^1.7.1"
   }
