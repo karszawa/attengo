@@ -1,7 +1,0 @@
-{
-  "rootPath": "github.com/siquare/attengo",
-  "heroku": {
-    "goVersion": "go1.10.2",
-    "install": [ "./app" ]
-  }
-}
