@@ -23,7 +23,6 @@
     "@hyperapp/router": "^0.7.0",
     "actions": "^1.3.0",
     "containers": "^0.0.1",
-    "dotenv": "^5.0.1",
     "firebase": "^5.0.2",
     "hyperapp": "^1.2.5"
   },
