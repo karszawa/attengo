@@ -1,3 +1,4 @@
+import "./env";
 import { app } from "hyperapp";
 import { location } from "@hyperapp/router";
 import actions from "./actions/base";
