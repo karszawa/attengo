@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import RecordIndex from "./RecordIndex";
 import RecordNew from "./RecordNew";
 import { authentication } from "../firebase/authentication";
+import { database, TIMESTAMP } from "../firebase/database";
 
 // const Home = () => <h2>Home</h2>
 // const About = () => <h2>About</h2>
@@ -37,6 +38,23 @@ const View = (state, actions) => (
             signInAction={ authentication.signIn }
             signOutAction={ authentication.signOut }
         />
+
+        {state.user && state.user.uid &&
+        <button
+            onclick={
+                database.pushRecord.bind(this, state.user.uid, {
+                    startedAt: TIMESTAMP,
+                    endAt: TIMESTAMP,
+                    breakTime: 0,
+                    comment: "",
+                    createdAt: TIMESTAMP,
+                    updatedAt: TIMESTAMP,
+                })
+            }
+        >
+            Button
+        </button>
+        }
 
         <Route
             path="/"
