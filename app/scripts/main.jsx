@@ -1,15 +1,18 @@
 import { app } from "hyperapp";
-import { location } from "@hyperapp/router";
 import actions from "./actions/base";
-import view from "./containers/view";
+import View from "./containers/View";
+
+import { location } from "@hyperapp/router";
+import { authentication } from "./firebase/authentication";
 
 const state = {
-    n: 0,
     user: null,
     accessToken: null,
     location: location.state,
 };
 
-const main = app(state, actions, view, document.body);
+const main = app(state, actions, View, document.body);
 
-const unsubscribe = location.subscribe(main.location);
+location.subscribe(main.location);
+
+authentication.subscribe(main.updateUser);

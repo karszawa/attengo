@@ -1,9 +1,10 @@
 import { h } from "hyperapp";
 import { Route } from "@hyperapp/router";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import RecordIndex from "./record-index";
-import RecordNew from "./record-new";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import RecordIndex from "./RecordIndex";
+import RecordNew from "./RecordNew";
+import { authentication } from "../firebase/authentication";
 
 // const Home = () => <h2>Home</h2>
 // const About = () => <h2>About</h2>
@@ -29,9 +30,13 @@ import RecordNew from "./record-new";
 //     </div>
 // )
 
-const view = (state, actions) => (
+const View = (state, actions) => (
     <div>
-        <Header user={ state.user } signInAction={actions.signIn} />
+        <Header
+            user={ state.user }
+            signInAction={ authentication.signIn }
+            signOutAction={ authentication.signOut }
+        />
 
         <Route
             path="/"
@@ -65,4 +70,4 @@ const view = (state, actions) => (
     </div>
 );
 
-export default view;
+export default View;

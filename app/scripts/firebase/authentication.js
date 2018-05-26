@@ -1,10 +1,21 @@
 import firebase from './firebase';
 
 const provider = new firebase.auth.GoogleAuthProvider();
-const auth = firebase.auth();
 
-function signInWithPopup() {
-    return auth.signInWithPopup(provider);
-}
+export const authentication = {
+    signIn: () => {
+        firebase.auth().signInWithPopup(provider).then();
+    },
 
-export default signInWithPopup;
+    signOut: () => {
+        firebase.auth().signOut().then();
+    },
+
+    subscribe: (observer, error) => {
+        firebase.auth().onAuthStateChanged(observer, error);
+
+        return () => {
+            firebase.auth().onAuthStateChanged(() => {});
+        }
+    },
+};
