@@ -2,9 +2,8 @@
 
 ## TODO
 
-- [ ]
-- [ ] Create DB
-- [ ] Create DB migrations
-- [ ] Introduce Google authentication
+- [x] Introduce Firebase storage
+- [x] Introduce Firebase authentication
+- [ ] Use TypeScript
 - [ ] Design page
 - [ ] Implement all
