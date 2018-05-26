@@ -1,5 +1,5 @@
 import { h } from "hyperapp";
-import SignUpButton from "./sign-up-button";
+import SignInButton from "./sign-in-button";
 
 export default (props) => (
     <div>
@@ -7,6 +7,10 @@ export default (props) => (
             Logo
         </div>
 
-        <SignUpButton />
+        { props.user ?
+            <p>{ props.user.email }</p>
+        :
+            <SignInButton signInAction={props.signInAction} />
+        }
     </div>
 );

@@ -31,7 +31,7 @@ import RecordNew from "./record-new";
 
 const view = (state, actions) => (
     <div>
-        <Header user={ state.user } />
+        <Header user={ state.user } signInAction={actions.signIn} />
 
         <Route
             path="/"

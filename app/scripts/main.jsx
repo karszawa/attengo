@@ -4,7 +4,9 @@ import actions from "./actions/base";
 import view from "./containers/view";
 
 const state = {
+    n: 0,
     user: null,
+    accessToken: null,
     location: location.state,
 };
 

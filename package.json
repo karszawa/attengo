@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "babel-preset-hyperapp": "^2.3.0",
-    "parcel-bundler": "^1.7.1",
+    "parcel-bundler": "^1.8.1",
     "yarn": "^1.6.0"
   }
 }
